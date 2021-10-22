@@ -53,28 +53,57 @@
       "timestamp": 1620284667,
       "authorId": 2,
       "body": "Bonjour c'est le premier message de la seconde conversation"
+    },
+    {
+      "body": "Bonjour Jeremie !",
+      "timestamp": 1634829927789,
+      "conversationId": 1,
+      "authorId": 1,
+      "id": 5
     }
   ],
   "users": [
     {
       "id": 1,
       "nickname": "Thibaut",
+      "password": "123",
       "token": "xxxx"
     },
     {
       "id": 2,
       "nickname": "Jeremie",
+      "password": "123",
       "token": "xxxx"
     },
     {
       "id": 3,
       "nickname": "Patrick",
+      "password": "123",
       "token": "xxxx"
     },
     {
       "id": 4,
       "nickname": "Elodie",
+      "password": "123",
       "token": "xxxx"
+    },
+    {
+      "nickname": "Lokman",
+      "password": "123",
+      "token": "xxxx",
+      "id": 5
+    },
+    {
+      "nickname": "Lokman2",
+      "password": "123",
+      "token": "xxxx",
+      "id": 6
+    },
+    {
+      "nickname": "Lokman3",
+      "password": "123",
+      "token": "xxxx",
+      "id": 7
     }
   ]
 }

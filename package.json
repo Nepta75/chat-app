@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start && yarn start-server",
     "start-server": "json-server --watch src/server/db.json --routes src/server/routes.json --middlewares src/server/middleware/index.js --port 3005",
     "test": "jest",
     "lint": "next lint --no-error-on-unmatched-pattern"

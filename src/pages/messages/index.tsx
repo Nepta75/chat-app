@@ -19,9 +19,10 @@ const Messages: NextPage<Props> = () => {
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/conversations/${user.id}`)
         .then(response => response.json())
         .then(data => {
-          console.log('data', data);
           return setConversations(data)
-        })
+        }).catch(function() {
+          alert("Une erreur est survenue lors de la connexion au serveur.")
+        });
     }
   }, [user]);
 

@@ -35,7 +35,9 @@ const Connexion: NextPage = () => {
           return;
         }
         return setMessage({ message: 'Identifiants incorrects !', variant: 'danger' })
-      })
+      }).catch(function() {
+        setMessage({ variant: "danger", message: "Une erreur est survenue lors de la connexion au serveur."})
+      });
   };
 
   return (

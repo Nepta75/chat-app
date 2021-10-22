@@ -14,35 +14,39 @@ const Inscription: NextPage = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const router = useRouter()
 
-  const onSubmit: SubmitHandler<Inputs> = async ({ nickname, password }) => {  
-    const req = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        nickname,
-        password,
-        token: 'xxxx'
-      })
-    });
-
-    if (req.status === 200 || req.status === 201) {
-      const data = await req.json();
-      if (data?.id) {
-        router.push({
-          pathname: '/connexion',
-          query: { message: 'Inscription réussi, vous pouvez vous connecter !', success: true }
+  const onSubmit: SubmitHandler<Inputs> = async ({ nickname, password }) => {
+    try {
+        const req = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          nickname,
+          password,
+          token: 'xxxx'
         })
+      })
+
+      if (req.status === 200 || req.status === 201) {
+        const data = await req.json();
+        if (data?.id) {
+          router.push({
+            pathname: '/connexion',
+            query: { message: 'Inscription réussi, vous pouvez vous connecter !', success: true }
+          })
+          return;
+        }
+        return setErrorMessage("Erreur lors de l'inscription")
+      }
+      
+      if (req.status === 403) {
+        setErrorMessage("Le prénom existe déjà, veuillez en choisir un autre !");
         return;
       }
-      return setErrorMessage("Erreur lors de l'inscription")
-    }
-    
-    if (req.status === 403) {
-      setErrorMessage("Le prénom existe déjà, veuillez en choisir un autre !");
-      return;
+    } catch (error) {
+      setErrorMessage("Une erreur est survenue lors de la connexion au serveur.");
     }
   };
 

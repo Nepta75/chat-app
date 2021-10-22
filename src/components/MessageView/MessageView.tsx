@@ -43,7 +43,9 @@ const MessageView: FC<Props> = ({ conversation }) => {
         setMessages([...messages, data]);
         reset({ messageText: ''})
       }
-    })
+    }).catch(function() {
+      alert("Une erreur est survenue lors de la connexion au serveur.")
+    });
   };
 
   useEffect(() => {
@@ -56,7 +58,8 @@ const MessageView: FC<Props> = ({ conversation }) => {
             data => setMessages(data)
           )
         }
-      }) 
+      }).catch(function() {
+      }); 
     }
   }, [conversation.id, reset]);
 

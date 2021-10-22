@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`message page Should render correctly with user and conversations mocked data 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="Messagesstyle__StyledContainer-sc-15ymc2e-0 fPldhQ"
+  >
+    <div
+      className="conversations-container"
+    >
+      <div
+        className="item "
+        onClick={[Function]}
+      >
+        <img
+          alt="recipient-2"
+          src="https://www.wortis.fr/wp-content/uploads/2018/06/client.png"
+        />
+        <div>
+          Jeremie
+        </div>
+        <div
+          className="date"
+        >
+          dernier message le 
+          19/01/70 à 08:33
+        </div>
+      </div>
+      <div
+        className="item "
+        onClick={[Function]}
+      >
+        <img
+          alt="recipient-3"
+          src="https://www.wortis.fr/wp-content/uploads/2018/06/client.png"
+        />
+        <div>
+          Patrick
+        </div>
+        <div
+          className="date"
+        >
+          dernier message le 
+          19/01/70 à 07:04
+        </div>
+      </div>
+      <div
+        className="item "
+        onClick={[Function]}
+      >
+        <img
+          alt="recipient-1"
+          src="https://www.wortis.fr/wp-content/uploads/2018/06/client.png"
+        />
+        <div>
+          Elodie
+        </div>
+        <div
+          className="date"
+        >
+          dernier message le 
+          19/01/70 à 08:34
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
